@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "aspire-alpha": {
+      "type": "http",
+      "url": "https://alpha.aspire.io/mcp"
+    }
+  }
+}

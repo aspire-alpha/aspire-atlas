@@ -46,7 +46,7 @@ Same rules as every Atlas profile skill: pre-fill from the Aspire Alpha MCP and 
 ## Step 1 — Detect the roster before asking about it
 
 - `search_posts` for posts mentioning or tagging the brand's handle; look for creators doing it **regularly** — repeat mentions are the partner signal, a single tag is noise.
-- `search_accounts` / `fetch_account` on each candidate: themes, partnership history (`pastBrandPartnershipPartners` — note it's exact-match and often null), whether their content has been analyzed, and the safety verdict if it has.
+- `search_creators` / `fetch_account` on each candidate: themes, partnership history (`pastBrandPartnershipPartners` — note it's exact-match and often null), whether their content has been analyzed, and the safety verdict if it has.
 - **Capture handles exactly as they appear in the index.** Exact-match fields return a silent zero on a casing mismatch — `Aspire` vs `ASPIRE` reads identically to "no partners." Getting exact strings is not a nicety; it is the difference between a real answer and a confident zero.
 - Check the project for prior shortlists and creator work on this brand.
 

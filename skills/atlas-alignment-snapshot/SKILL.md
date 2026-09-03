@@ -77,7 +77,7 @@ See `references/say-show-respond.md` for how to build each panel from real field
 ## Step 1 — Build the three panels
 
 Everything here runs on **targeted index reads** scoped to this one question —
-`fetch_account`, `search_posts`, `search_accounts`, `search_creator_marketplace`.
+`fetch_account`, `search_posts`, `search_creators`, `search_creator_marketplace`.
 This is **not** the deep sweep the profile skills own. Do not build a creators,
 competitor or safety profile to produce this snapshot.
 

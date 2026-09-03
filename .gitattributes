@@ -1,0 +1,5 @@
+# Never let git normalize line endings on clone/checkout. The publish workflow's integrity check
+# (scripts/atlas-plugin-hash.sh) hashes file *content*, and a clone that rewrites CRLF<->LF on the
+# way in would make an untouched file hash differently from the tagged source for a reason that has
+# nothing to do with the actual bytes anyone published. See ASP-1469.
+* -text

@@ -41,7 +41,7 @@ mis-aimed — mark it and let the mirror invite the correction.
 ## SHOW — what the market shows
 
 **Sources:** `search_posts` for mentions and tags of the brand handle,
-`search_accounts` / `fetch_account` on the creators found,
+`search_creators` / `fetch_account` on the creators found,
 `search_creator_marketplace` for category whitespace.
 
 | Read | How |

@@ -1,0 +1,14 @@
+{
+  "name": "aspire",
+  "owner": {
+    "name": "Aspire"
+  },
+  "description": "Atlas by Aspire's public marketplace. Installing from this repository gets you exactly one plugin, aspire-atlas — nothing else Aspire builds is listed here.",
+  "plugins": [
+    {
+      "name": "aspire-atlas",
+      "source": ".",
+      "description": "Atlas by Aspire — the content performance operating system for consumer brands. Phase 1 calibration: question-led onboarding ending in an alignment snapshot and a recommended first action, plus on-demand brand, user, creator, competitor, safety and creative-pattern analysis."
+    }
+  ]
+}

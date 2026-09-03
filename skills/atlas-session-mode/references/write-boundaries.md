@@ -35,7 +35,7 @@ write and block it.**
 **Reads — allowed**
 
 `list_my_organizations` · `list_my_profiles` · `fetch_account` · `fetch_posts` ·
-`search_posts` · `search_accounts` · `search_creator_marketplace` ·
+`search_posts` · `search_creators` · `search_creator_marketplace` ·
 `get_brand_safety_config` · `list_profile_hashtags` · `get_job_status`
 
 **Writes — blocked**
@@ -47,11 +47,15 @@ write and block it.**
 | `remove_profile_hashtag` | Same, destructively |
 | `set_profile_hashtag_search_active` | Whether a watchlist is live |
 | `start_business_discovery` | Queues real ingestion and attributes it to the brand's insights cohort |
+| `lookup_creators` | Same: a miss starts real discovery against Meta/TikTok and writes a Sighting to the brand |
+| `lookup_posts` | Same, and a tiktok miss bills a paid per-post vendor call |
 
-⚠️ **`start_business_discovery` is the easy one to get wrong.** It reads like a
-fetch, but it costs pipeline work and lands in a real brand's cohort. Blocked in
-both test modes. For an existing-org test, work with whatever is already there
-and say what coverage is actually available.
+⚠️ **These three are the easy ones to get wrong.** They read like a fetch, but
+they cost pipeline work and land in a real brand's cohort. Blocked in both test
+modes. For an existing-org test, work with whatever is already there and say
+what coverage is actually available. `lookup_creators`/`lookup_posts` became
+reachable here when ASP-1532 promoted them from the Debugging surface — every
+lookup is attributed by design, so there is no "just looking" mode.
 
 ---
 
@@ -86,11 +90,11 @@ customers.
 
 **Reads — allowed:** `get_agent_prompt` · `get_agent_prompt_history` ·
 `get_agent_brand_config` · `get_agent_data_page` · `list_agent_types` ·
-`lookup_accounts` · `lookup_posts` · `insights_get` · `insights_list` ·
-`insights_search` · `list_profile_marketplace_searches` · `run_agent_preview`
+`get_insight` · `list_insights` · `search_insights` ·
+`list_profile_marketplace_searches` · `run_agent_preview`
 
-**Writes — all blocked:** `set_agent_prompt` · `insights_append` ·
-`insights_update` · `insights_delete` · `create_profile_marketplace_search` ·
+**Writes — all blocked:** `set_agent_prompt` · `append_insight` ·
+`update_insight` · `delete_insight` · `create_profile_marketplace_search` ·
 `update_profile_marketplace_search` · `disable_profile_marketplace_search` ·
 `remove_profile_marketplace_search`
 
